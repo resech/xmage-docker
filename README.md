@@ -12,7 +12,11 @@ Based on the work [Goesta](https://github.com/mage-docker/xmage-beta-docker) did
 
 ## How To
 
-Clone the repo and make your changes. Then from inside the directory run the following to download and build a fresh image:
+Clone the repo and make your changes. 
+
+### Make sure you change XMAGE_DOCKER_SERVER_ADMIN_PASSWORD or set it to empty in compose.yaml
+
+Then from inside the directory run the following to download and build a fresh image:
 
 `docker compose up -d`
 
