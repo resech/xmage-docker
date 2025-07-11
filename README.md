@@ -20,7 +20,7 @@ Then from inside the directory run the following to download and build a fresh i
 
 `docker compose up -d`
 
-Stop the stack using this command to remove the image and stack:
+Use this command to stop the stack and remove the image:
 
 `docker compose down mage_weekly --rmi local`
 
