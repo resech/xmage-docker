@@ -1,0 +1,32 @@
+services:
+  mage_weekly:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "17171:17171"
+      - "17179:17179"
+    extra_hosts:
+      - "xmage.local:0.0.0.0"
+    environment:
+     - XMAGE_DOCKER_SERVER_ADDRESS=xmage.local
+     - "XMAGE_DOCKER_SERVER_NAME=My XMage Server"
+     - "XMAGE_DOCKER_SERVER_ADMIN_PASSWORD=SuperSecretP@ssw0rd"
+     - XMAGE_DOCKER_PORT=17171
+     - XMAGE_DOCKER_SEONDARY_BIND_PORT=17179
+     - XMAGE_DOCKER_MAX_SECONDS_IDLE=180
+     - XMAGE_DOCKER_BACKLOGSIZE=800
+     - XMAGE_DOCKER_ACCEPTTHREADS=4
+     - XMAGE_DOCKER_POOLSIZE=1000
+     - XMAGE_DOCKER_LEASEPERIOD=12000
+     - XMAGE_DOCKER_MAX_GAME_THREADS=20
+     - XMAGE_DOCKER_MAX_AI_OPPONENTS=3
+     - XMAGE_DOCKER_AUTHENTICATION_ACTIVATED=false
+     - "XMAGE_DOCKER_JAVA_OPTS=-Xmx9G -XX:+UseZGC -XX:+ZGenerational -XX:SoftMaxHeapSize=8G -XX:+UseLargePages -XX:+UseTransparentHugePages --add-opens=java.base/java.io=ALL-UNNAMED -Dlog4j.configuration=file:./config/log4j.properties"
+    volumes:
+     - xmage-db:/xmage/db
+     - xmage-saved:/xmage/saved
+volumes:
+    xmage-db:
+        driver: local
+    xmage-saved:
+        driver: local
