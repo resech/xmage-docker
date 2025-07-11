@@ -1,14 +1,14 @@
 # xmage-docker
 Docker Xmage Files
 
-Based on the work Goesta did, setup to build a fresh image each launch.
+Based on the work [Goesta](https://github.com/mage-docker/xmage-beta-docker) did, setup to build a fresh image each launch.
 
 ## Changes
 
-Builds off Java 21 image (I wanted to use ZGC), you can easily flip this back in `Dockerfile` to java 8.
-There's a bunch of specific Java options I've set in `compose.yaml`, delete them if you don't want them.
-Adds an environment variable to set an optional admin password, not the most secure way to do this but I wanted to see if it worked at all (it does). [Admin Tools](https://github.com/magefree/mage/issues/5388)
-Points to Graths weekly builds. You can easily update this in `Dockerfile` to point to whatever repo you want.
+* Builds off Java 21 image (I wanted to use ZGC), you can easily flip this back in `Dockerfile` to java 8.
+* There's a bunch of specific Java options I've set in `compose.yaml`, delete them if you don't want them.
+* Adds an environment variable to set an optional admin password, not the most secure way to do this but I wanted to see if it worked at all (it does). [Admin Tools](https://github.com/magefree/mage/issues/5388)
+* Points to Graths weekly builds. You can easily update this in `Dockerfile` to point to whatever repo you want.
 
 ## How To
 
